@@ -1,13 +1,12 @@
 <script >
-import ProjectIndex from './pages/projects/index.vue'
+import ProjectIndex from './pages/projects/Index.vue'
   export default {
     
       components: {
         ProjectIndex
-
       } 
-    
   }
+
 </script>
 
 <template>

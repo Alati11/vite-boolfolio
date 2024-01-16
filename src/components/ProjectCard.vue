@@ -17,7 +17,7 @@
   </script>
   
   <style lang="scss" scoped>
-    .card.card-post {
+    .card.card-project {
       padding: 20px;
       border-radius: 8px;
       background: #dedede;
