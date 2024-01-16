@@ -20,6 +20,7 @@
         .then((res) => {
           console.log(res)
           this.projects = res.data.results
+          console.log(res.data.results);
         })
       }
     },
@@ -39,7 +40,7 @@
   
       <div class="container">
         <div class="grid">
-          <ProjectCard class="card post-card" v-for="project in projects" :project="project" :key="project.id" />
+          <ProjectCard class="card card-index" v-for="project in projects" :project="project" :key="project.id" />
         </div>
       </div>
     </div>
@@ -49,7 +50,27 @@
   <style lang="scss" scoped>
   .grid {
     display: grid;
-    gap: 2rem;
+    gap: 1.5rem;
     grid-template-columns: repeat(3,1fr);
   }
+
+  .card {
+    background: rgba(255, 255, 255, 0.1); 
+    color: black;
+    border: 2px solid black;
+    border-radius: 1.5em;
+    text-align: center;
+    // line-height: 1.8em;
+    // vertical-align: middle;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transform: translateZ(0);
+    backdrop-filter: blur(5px);
+    filter: drop-shadow(30px 30px 50px black);
+}
+  .card-index {
+    width: 400px;
+    height: 200px;
+    margin: 20px auto;
+    font-size: 30px;
+}
   </style>
