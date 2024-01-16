@@ -1,15 +1,17 @@
 
   <script>
   export default {
-    components: {
-      
-    },
+
     data() {
       return {
        title: 'Giuseppe',
        job: 'Full Stack Developer'
         
       }
+    },
+    mounted(){
+      console.log('home page montata')
+
     },
     methods: {
       
