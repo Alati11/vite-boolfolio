@@ -3,7 +3,6 @@
   <script>
   import axios from 'axios';
   import ProjectCard from '../../components/ProjectCard.vue';
-import { onMounted } from 'vue';
   export default {
     components: {
       ProjectCard

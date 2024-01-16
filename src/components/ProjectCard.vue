@@ -27,9 +27,9 @@
       <h3>{{ project.title }}</h3>
       <p>{{ project.type_id}}</p>
       <!-- <p>{{ project.description }}</p> -->
-      
-
-      <p v-for="tech in project.technologies">{{ tech.name }}</p>
+      <!-- <p v-for="tech in project.technologies">{{ tech.name }}</p> -->
+      <!-- <p v-if="project.type">{{  project.type.name }}</p> -->
+      <router-link :to="{ name: 'projects.show', params: { slug: project.slug }}" >Leggi la descrizione</router-link>
     </div>
 </template>
   
