@@ -1,7 +1,5 @@
 
-  
   <script>
-  import axios from 'axios';
   export default {
     components: {
       
@@ -9,7 +7,7 @@
     data() {
       return {
        title: 'Giuseppe',
-       job: 'Tennista'
+       job: 'Full Stack Developer'
         
       }
     },
@@ -26,7 +24,7 @@
         <div class="container">
             <h1>{{ title }}</h1>
             <h2>{{ job }}</h2>
-            <p>la mia app con vue</p>
+            <p>La mia app con Vue</p>
         </div>
     </div>
 
