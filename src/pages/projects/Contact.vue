@@ -7,7 +7,7 @@ export default {
 <template>
     <div>
       <div class="container">
-        Pagina contatti
+       <h1>Pagina Conatti</h1>
       </div>
   
       <div class="container">

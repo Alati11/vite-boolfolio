@@ -9,10 +9,7 @@
         
       }
     },
-    mounted(){
-      console.log('home page montata')
-
-    },
+  
     methods: {
       
     },

@@ -12,7 +12,7 @@
         projects: [],
         BASE_URL: 'http://127.0.0.1:8000/api'
         
-      }
+      }   
     },
     methods: {
       fetchProjects() {
@@ -27,9 +27,6 @@
     created() {
       this.fetchProjects()
     },
-    mounted(){
-      console.log('projects.index montato')
-    }
   }
   </script>
 

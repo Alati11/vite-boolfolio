@@ -23,13 +23,14 @@
 </script>
 
 <template>
-    <div class="card card-project">
+
+    <div class="card card-project" v-if="project">
       <h3>{{ project.title }}</h3>
       <p>{{ project.type_id}}</p>
-      <!-- <p>{{ project.description }}</p> -->
-      <!-- <p v-for="tech in project.technologies">{{ tech.name }}</p> -->
-      <!-- <p v-if="project.type">{{  project.type.name }}</p> -->
-      <router-link :to="{ name: 'projects.show', params: { slug: project.slug }}" >Leggi la descrizione</router-link>
+      <li class="li-tech" v-for="technology in project.technologies">{{ technology.name }}</li>
+      
+      <!-- <router-link :to="{ name: 'projects.show', params: { slug: project.slug }}" >Leggi la descrizione</router-link> -->
+
     </div>
 </template>
   
@@ -39,5 +40,17 @@
       padding: 20px;
       border-radius: 8px;
       background: #dedede;
+      margin: 20px auto;
+      width: 300px;
+      height: 350px; 
+
+    }
+
+    .li-tech {
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      list-style: none;
+      font-size: 16px;
     }
   </style>
