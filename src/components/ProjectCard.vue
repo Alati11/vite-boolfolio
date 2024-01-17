@@ -26,10 +26,10 @@
 
     <div class="card card-project" v-if="project">
       <h3>{{ project.title }}</h3>
-      <p>{{ project.type_id}}</p>
-      <li class="li-tech" v-for="technology in project.technologies">{{ technology.name }}</li>
+      <p>{{ project.type.name}}</p>
+      <li class="li-tech" v-for="technology in project.technologies" :key="project.id">{{ technology.name }}</li>
       
-      <!-- <router-link :to="{ name: 'projects.show', params: { slug: project.slug }}" >Leggi la descrizione</router-link> -->
+          <router-link :to="{ name: 'projects.show', params: { slug: project.slug }}" >Leggi la descrizione</router-link>
 
     </div>
 </template>

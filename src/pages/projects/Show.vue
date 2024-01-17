@@ -40,7 +40,6 @@ export default {
                 <p v-for="tech in project.technologies" >{{ tech.name }}</p>
           </li>
         </ul>
-            
       </div>
   
       <div class="container" v-html="project.description">

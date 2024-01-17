@@ -60,8 +60,6 @@
     border: 2px solid black;
     border-radius: 1.5em;
     text-align: center;
-    // line-height: 1.8em;
-    // vertical-align: middle;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     transform: translateZ(0);
     backdrop-filter: blur(5px);
