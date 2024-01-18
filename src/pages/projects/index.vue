@@ -33,9 +33,7 @@
 <template>
     <div>
       <div class="container">
-        <h1>
-          I Miei Progetti
-        </h1>
+        <h1 class="project-title">I Miei Progetti</h1>
       </div>
   
       <div class="container">
@@ -47,17 +45,23 @@
 </template>
 
 
-  <style lang="scss" scoped>
+  <style lang="scss" scoped>  
   .grid {
     display: grid;
     gap: 1.5rem;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(4,1fr);
   }
 
   .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;  
+    height: 100%;
     background: rgba(255, 255, 255, 0.1); 
     color: black;
-    border: 2px solid black;
+    border: 1px solid black;
     border-radius: 1.5em;
     text-align: center;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
@@ -66,9 +70,15 @@
     filter: drop-shadow(30px 30px 50px black);
 }
   .card-index {
-    width: 400px;
-    height: 200px;
     margin: 20px auto;
+    padding: 20px;
     font-size: 30px;
 }
+
+.project-title {
+  margin: 20px auto;
+  text-align: center;
+}
+
+
   </style>

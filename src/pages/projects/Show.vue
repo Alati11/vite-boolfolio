@@ -31,23 +31,92 @@ export default {
 
 <template>
     <div v-if="project">
-      <div class="container">
-        <h1>{{ project.title }}</h1>
-        <p>{{ project.slug }}</p>
-        <p >{{ project.type.name }}</p>
-        <ul class="tags">
-          <li class="tags" v-if="project.technologies" >
-                <p v-for="tech in project.technologies" >{{ tech.name }}</p>
-          </li>
-        </ul>
-      </div>
-  
-      <div class="container" v-html="project.description">
+      <div class="container card-details card-show">
+          <h1>{{ project.title }}</h1>
+          <img  class="thumb" :src="project.thumb" alt="">
+          <ul class="tech">
+            <li>
+              <p>{{ project.slug }}</p>
+            </li>
+            <li>
+              <p >{{ project.type.name }}</p>
+            </li>
+            <li class="tech-li" v-if="project.technologies" >
+                <p class="tech-li" v-for="tech in project.technologies" >{{ tech.name }}</p>
+            </li>
+            <li>
+              <p v-html="project.description"></p>
+            </li>
+          </ul>
       </div>
     </div>
   </template>
 
 <style lang="scss" scoped>
+
+
+.card-show {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1); 
+    color: whitesmoke;
+    border: 2px solid black;
+    border-radius: 1.5em;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transform: translateZ(0);
+    backdrop-filter: blur(5px);
+    filter: drop-shadow(30px 30px 50px black);
+}
+.card-details {  
+    margin: 10px auto;
+    width:500px;
+    padding: 15px;
+    height: 650px;
+    animation: moveCard 5s;
+}
+
+@keyframes moveCard {
+    0%{
+        transform: rotateX(360deg) rotateY(0deg);
+    }
+    50%{
+        transform: rotateX(60deg) rotateY(-45deg);
+    }
+    100%{
+        transform: rotateX(360deg) rotateY(0deg);
+    }
+}
+
+.tech {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;  
+  height: 100%;
+}
+
+.tech-li {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  margin:0  15px;
+  background-color: #356438;
+  color: white; 
+  width: 60px;
+  border-radius: 8px;
+  padding: 6px;
+  font-size: 17px;
+}
+
+.thumb {
+  max-width: 100%; 
+  border-radius: 8px;
+}
+
 
 
 </style>
