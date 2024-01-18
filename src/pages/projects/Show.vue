@@ -18,7 +18,11 @@ export default {
         console.log(this.project)
 
       }).catch((error) => {
-        console.log('project not found',error.response)
+        console.log('progetto non trovato',error.response)
+
+        if(error.response.status === 404) {
+          this.$router.push({name: 'not-found'})
+        }
 
       })
     }
@@ -39,7 +43,7 @@ export default {
               <p>{{ project.slug }}</p>
             </li>
             <li>
-              <p >{{ project.type.name }}</p>
+              <p >{{ project.type?.name }}</p>
             </li>
             <li class="tech-li" v-if="project.technologies" >
                 <p class="tech-li" v-for="tech in project.technologies" >{{ tech.name }}</p>
