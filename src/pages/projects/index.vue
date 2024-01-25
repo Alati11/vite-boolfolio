@@ -18,7 +18,7 @@
       fetchProjects() {
         axios.get(`${this.BASE_URL}/projects`)
         .then((res) => {
-          console.log(res)
+          console.log(res.data)
           this.projects = res.data.results
           console.log(res.data.results);
         })

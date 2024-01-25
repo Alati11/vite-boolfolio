@@ -12,17 +12,14 @@
           <ul class="nav-header">
             <li class="nav-link">
               <div>
-                Logo
-                <router-link class="nav-link" :to="{ name: 'home' }">Home</router-link>
+                <router-link class="nav-link" :to="{ name: 'home' }">G.A.</router-link>
               </div>
             </li>
             <li class="nav-link">
-              Search
-            </li>
-            <li class="nav-link">
               <div >
-                <router-link class="nav-link" :to="{ name: 'projects.index'}">Progetti</router-link>
-                <router-link class="nav-link" :to="{ name: 'contacts' }">Contatti</router-link>
+                <router-link class="nav-link" :to="{ name: 'projects.index'}">PORTFOLIO</router-link>
+                <router-link class="nav-link" :to="{ name: 'projects.index'}">CHI SONO</router-link>
+                <router-link class="nav-link" :to="{ name: 'contacts' }">CONTATTI</router-link>
               </div>
             </li>
           </ul>
@@ -33,12 +30,14 @@
   
   <style lang="scss" scoped>
   .nav-header {
+    height:90px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    color: black;
-    background-color: #72F243;
+    color: gray;
+    background-color: transparent;
+    border-bottom: 2px solid gray;
 
   }
 
@@ -48,12 +47,12 @@
 
   *a:hover {
     color: whitesmoke;
-    font-size: 20px;
   }
 
   .nav-link {
     font-size: 19px;
     list-style: none;
     margin: 0 10px;
+    color: gray;
   }
   </style>

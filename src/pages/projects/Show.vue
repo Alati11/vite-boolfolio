@@ -46,7 +46,7 @@ export default {
               <p >{{ project.type?.name }}</p>
             </li>
             <li class="tech-li" v-if="project.technologies" >
-                <p class="tech-li" v-for="tech in project.technologies" >{{ tech.name }}</p>
+                <p class="tech" v-for="tech in project.technologies" >{{ tech.name }}</p>
             </li>
             <li>
               <p v-html="project.description"></p>
@@ -101,19 +101,25 @@ export default {
   align-items: center;
   padding: 10px;  
   height: 100%;
+  
+  
 }
 
 .tech-li {
   display: flex;
-  justify-content: space-around;
-  text-align: center;
-  margin:0  15px;
-  background-color: #356438;
+  justify-content: center;
+  // text-align: center;
+  margin: 0px 30px;
+  
   color: white; 
-  width: 60px;
+  background-color: #356438;
+  // width: %;
+  line-height: 1.2em;
   border-radius: 8px;
   padding: 6px;
   font-size: 17px;
+
+
 }
 
 .thumb {
