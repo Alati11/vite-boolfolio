@@ -40,16 +40,16 @@ export default {
           <img  class="thumb" :src="project.thumb" alt="">
           <ul class="tech">
             <li>
-              <p>{{ project.slug }}</p>
+              <p class="description-text" v-html="project.description"></p>
+            </li>
+            <li>
+              <!-- <p>{{ project.slug }}</p> -->
             </li>
             <li>
               <p >{{ project.type?.name }}</p>
             </li>
             <li class="tech-li" v-if="project.technologies" >
-                <p class="tech" v-for="tech in project.technologies" >{{ tech.name }}</p>
-            </li>
-            <li>
-              <p v-html="project.description"></p>
+                <p class="tech-text" v-for="tech in project.technologies" >{{ tech.name }}</p>
             </li>
           </ul>
       </div>
@@ -101,32 +101,31 @@ export default {
   align-items: center;
   padding: 10px;  
   height: 100%;
-  
-  
+  color: white; 
+  // background-color: #122462;
+}
+
+.tech-text {
+  background-color:#122462;
+  border-radius: 8px;
+  padding: 6px;
 }
 
 .tech-li {
   display: flex;
   justify-content: center;
-  // text-align: center;
   margin: 0px 30px;
-  
-  color: white; 
-  background-color: #356438;
-  // width: %;
+  gap: 20px;
   line-height: 1.2em;
-  border-radius: 8px;
-  padding: 6px;
   font-size: 17px;
-
-
 }
-
 .thumb {
   max-width: 100%; 
   border-radius: 8px;
+  margin: 20px;
 }
 
-
-
+.description-text {
+  font-size: 22px;
+}
 </style>

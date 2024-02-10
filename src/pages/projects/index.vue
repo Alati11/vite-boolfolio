@@ -1,7 +1,6 @@
-
-  
   <script>
   import axios from 'axios';
+  
   import ProjectCard from '../../components/ProjectCard.vue';
   export default {
     components: {
@@ -11,7 +10,6 @@
       return {
         projects: [],
         BASE_URL: 'http://127.0.0.1:8000/api'
-        
       }   
     },
     methods: {
@@ -21,7 +19,11 @@
           console.log(res.data)
           this.projects = res.data.results
           console.log(res.data.results);
-        })
+        }) 
+        //messaggio di errore
+        .catch((error) => {
+          console.error('Errore durante la richiesta:', error);
+        }); 
       }
     },
     created() {
@@ -37,8 +39,9 @@
       </div>
   
       <div class="container">
-        <div class="grid">
-          <ProjectCard class="card card-index" v-for="project in projects" :project="project" :key="project.id" />
+        <div class="card-style">
+          <ProjectCard class="card card-index" v-if="projects.length"  v-for="project in projects" :project="project" :key="project.id" />
+          <div v-else>Loading...</div>
         </div>
       </div>
     </div>
@@ -46,19 +49,24 @@
 
 
   <style lang="scss" scoped>  
-  .grid {
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: repeat(4,1fr);
-  }
+  // .grid {
+  //   display: grid;
+  //   gap: 1.5rem;
+  //   grid-template-columns: repeat(6 ,1fr);
+  // }
 
+  .card-style {
+    display: flex;
+    flex-wrap: wrap;
+  }
   .card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    width: 350px;
+    height: 550px;
     padding: 20px;  
-    height: 100%;
     background: rgba(255, 255, 255, 0.1); 
     color: black;
     border: 1px solid black;
@@ -69,10 +77,10 @@
     backdrop-filter: blur(5px);
     filter: drop-shadow(30px 30px 50px black);
 }
-  .card-index {
-    margin: 20px auto;
-    padding: 20px;
-    font-size: 30px;
+.card-index {
+  margin: 20px auto;
+  padding: 20px;
+  font-size: 30px;
 }
 
 .project-title {
@@ -80,5 +88,4 @@
   text-align: center;
 }
 
-
-  </style>
+</style>
